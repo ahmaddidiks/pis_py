@@ -1,5 +1,5 @@
 # pis_py
-Menulis ulang program praktikum pemodelan dan identifikasi (PIS) dari program matlab ke python (untuk laptop kentang, hihi)
+Menulis ulang program praktikum pemodelan dan identifikasi Sistem (PIS) dari program matlab menjadi python (untuk laptop kentang, hihi)
 ## Tool yang harus diinstall
 1. install python > 3.5, I use 3.9.1
 2. install pip pakage, I use 20.3.3
