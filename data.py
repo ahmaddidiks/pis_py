@@ -6,7 +6,7 @@
 # asisten praktikum PIS (Pemodelan dan Identifikasi Sistem) Tahun ajaran 2019/2020:
  
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
+#import matplotlib.cm as cm
 import numpy as np
 
 font = {'family': 'Times New Roman',
@@ -33,7 +33,7 @@ def dataOrde2():
     print("Data Orde 2")
     global Vin2, Vout2, D2
     Vin2  = np.array ([2.14, 3.23, 4.11, 4.63, 5.1])
-    Vout2 = ([12, 22, 32, 42, 62])
+    Vout2 = np.array ([12, 22, 32, 42, 62])
     #D2 = np.concatenate ((Vin2.T Vout2.T))
 
     plt.plot(Vin2,Vout2)
