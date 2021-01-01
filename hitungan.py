@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 
 def dataOrde2():
@@ -8,9 +8,6 @@ def dataOrde2():
     y= np.matrix('12;22;32;42;62')
     global tetha
     tetha = np.linalg.inv(pi.T * pi) * pi.T * y
-
- 
-
 
 if __name__ == '__main__' :
     dataOrde2()
