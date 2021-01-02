@@ -48,7 +48,5 @@ def dataOrde2():
     plt.show()
 
 if __name__ == '__main__' :
+    dataOrde1()
     dataOrde2()
-   # dataOrde2()
-    #print(Vin1)
-    #print(D1)
