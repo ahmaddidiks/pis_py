@@ -19,8 +19,10 @@ def dataOrde1():
     print("Data Orde 1")
     global Vin1, Vout1, D1
     Vin1 = np.array([2.05, 3.24, 4.74, 4.93, 5.05])
-    Vout1 = np.array([2.2, 9.2, 6.2, 6.2, 60.2]) 
-    #D1 = np.concatenate((Vin1.T, Vout1))
+    Vout1 = np.array([2.2, 9.2, 6.2, 6.2, 60.2])
+    D1Temp = np.vstack((Vin1, Vout1))
+    D1 = D1Temp.T
+    print(D1)
     
     plt.plot(Vin1,Vout1)
     plt.title('Grafik Hubungan Vin-Vout Orde 1', fontdict=font)
@@ -34,7 +36,9 @@ def dataOrde2():
     global Vin2, Vout2, D2
     Vin2  = np.array ([2.14, 3.23, 4.11, 4.63, 5.1])
     Vout2 = np.array ([12, 22, 32, 42, 62])
-    #D2 = np.concatenate ((Vin2.T Vout2.T))
+    D1Temp = np.vstack((Vin2, Vout2))
+    D2 = D1Temp.T
+    print(D2)
 
     plt.plot(Vin2,Vout2)
     plt.title('Grafik Hubungan Vin-Vout Orde 2', fontdict=font)
@@ -44,5 +48,7 @@ def dataOrde2():
     plt.show()
 
 if __name__ == '__main__' :
-    dataOrde1()
     dataOrde2()
+   # dataOrde2()
+    #print(Vin1)
+    #print(D1)
