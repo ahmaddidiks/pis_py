@@ -36,7 +36,7 @@ def autoRegresiveOrde1():
     den = list(den) #list ==> menambah koma diantara elements
     sys = signal.TransferFunction(num, den, dt=1) # selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
                                                   # sehingga hasil tersebut merupakan angka hasil bagi den[0]
-                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25
+                                                  # misal 1/4s^2+2s+1 menjadi 0.25/s^2+0.5s+0.25
                                                   # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
                                                   # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
 
@@ -102,7 +102,7 @@ def autoRegresiveOrde2():
     den = list(den) #list ==> menambah koma diantara elements
     sys = signal.TransferFunction(num, den, dt=1) # selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
                                                   # sehingga hasil tersebut merupakan angka hasil bagi den[0]
-                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25
+                                                  # misal 0.25/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25
                                                   # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
                                                   # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
     
@@ -160,7 +160,7 @@ def movingAverageOrde1():
     den = list(den) #list ==> menambah koma diantara elements
     sys = signal.TransferFunction(num, den, dt=1) # selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
                                                   # sehingga hasil tersebut merupakan angka hasil bagi den[0]
-                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25
+                                                  # misal 1/4s^2+2s+1 menjadi 0.25/s^2+0.5s+0.25
                                                   # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
                                                   # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
     
@@ -225,7 +225,7 @@ def movingAverageOrde2():
     den = list(den) #list ==> menambah koma diantara elements
     sys = signal.TransferFunction(num, den, dt=1) # selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
                                                   # sehingga hasil tersebut merupakan angka hasil bagi den[0]
-                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25
+                                                  # misal 1/4s^2+2s+1 menjadi 0.25/s^2+0.5s+0.25
                                                   # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
                                                   # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
     
@@ -289,7 +289,7 @@ def ARMAOrde1():
     den = list(den) #list ==> menambah koma diantara elements
     sys = signal.TransferFunction(num, den, dt=1) #selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
                                                   # sehingga hasil tersebut merupakan angka hasil bagi den[0]
-                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25 
+                                                  # misal 1/4s^2+2s+1 menjadi 0.25/s^2+0.5s+0.25 
                                                   # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
                                                   # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
 
@@ -372,7 +372,7 @@ def ARMAOrde2():
     den = list(den) #list ==> menambah koma diantara elements
     sys = signal.TransferFunction(num, den, dt=1) #selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
                                                   # sehingga hasil tersebut merupakan angka hasil bagi den[0]
-                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25 
+                                                  # misal 1/4s^2+2s+1 menjadi 0.25/s^2+0.5s+0.25 
                                                   # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
                                                   # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
 
