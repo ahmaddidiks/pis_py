@@ -12,7 +12,7 @@ def autoRegresiveOrde1():
     
     ARyk1 = ARyk.copy()
     ARyk1 = np.insert(ARyk1, 0, 0)
-    ARyk1 = np.delete(ARyk1, len(Vout1)) #dihitung dari nol
+    ARyk1 = np.delete(ARyk1, len(Vout1)) #hapus element terakhir
     ARyk1  = np.transpose(np.matrix(ARyk1))
 
     ARpi  = np.vstack((ARxk.T, ARyk1.T)).T #tidak bisa langsung
@@ -28,6 +28,14 @@ def autoRegresiveOrde1():
     
     dataAR = np.vstack((ARxk.T, ARy)).T
 
+    den = AR.A1 #merubah menjadi rank 1
+    den = list(den) #list ==> menambah koma diantara elements
+    sys = signal.TransferFunction(num, den, dt=1) # selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
+                                                  # sehingga hasil tersebut merupakan angka hasil bagi den[0]
+                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25
+                                                  # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
+                                                  # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
+
     print(" ARyk1 = ")
     print(ARyk1)
     print("\n ARpi = ")
@@ -38,6 +46,8 @@ def autoRegresiveOrde1():
     print(ARy)
     print("\n dataAR = ")
     print(dataAR)
+    print("\n Transfer Fungsi = ")
+    print(sys)
 
     plt.plot(ARxk, ARy)
     plt.plot(Vin1, Vout1)
@@ -59,7 +69,7 @@ def autoRegresiveOrde2():
     ARyk1 = Vout2.copy()
     ARyk1 = np.insert(ARyk1, 0, 0)
     ARyk1 = np.delete(ARyk1, len(ARyk1)-1)
-    ARyk1 = np.transpose(np.matrix(ARyk1)) #hasil matriksnya terbalik
+    ARyk1 = np.transpose(np.matrix(ARyk1)) 
 
     ARyk2 = Vout2.copy()
     ARyk2 = np.insert(ARyk2,0,0)
@@ -82,6 +92,15 @@ def autoRegresiveOrde2():
         ARy = np.insert(ARy,i, a)
     
     dataAR = np.vstack((ARxk.T, ARy)).T
+
+    num = [1] 
+    den = AR.A1 #merubah menjadi rank 1
+    den = list(den) #list ==> menambah koma diantara elements
+    sys = signal.TransferFunction(num, den, dt=1) # selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
+                                                  # sehingga hasil tersebut merupakan angka hasil bagi den[0]
+                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25
+                                                  # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
+                                                  # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
     
     print(" ARyk1 = ")
     print(ARyk1)
@@ -95,6 +114,8 @@ def autoRegresiveOrde2():
     print(ARy)
     print("\n dataAR = ")
     print(dataAR)
+    print("\n Transfer Fungsi = ")
+    print(sys)
 
     plt.plot(ARxk, ARy)
     plt.plot(Vin2, Vout2)
@@ -128,7 +149,16 @@ def movingAverageOrde1():
         a = MA[0].dot(MAxk[i]) + MA[1].dot(MAxk[i-1])
         MAy = np.insert(MAy,i,a)
     
-    dataMA = np.vstack((MAxk.T, MAy)).T 
+    dataMA = np.vstack((MAxk.T, MAy)).T
+
+    num = [1] 
+    den = MA.A1 #merubah menjadi rank 1
+    den = list(den) #list ==> menambah koma diantara elements
+    sys = signal.TransferFunction(num, den, dt=1) # selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
+                                                  # sehingga hasil tersebut merupakan angka hasil bagi den[0]
+                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25
+                                                  # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
+                                                  # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
     
     print(" MAxk1 = ")
     print(MAxk1)
@@ -140,6 +170,8 @@ def movingAverageOrde1():
     print(MAy)
     print("\n dataMA = ")
     print(dataMA)
+    print("\n Transfer Fungsi = ")
+    print(sys)
 
     plt.plot(MAxk, MAy)
     plt.plot(Vin1, Vout1)
@@ -182,7 +214,16 @@ def movingAverageOrde2():
         a = MA[0].dot(MAxk[i]) + MA[1].dot(MAxk[i-1]) + MA[2].dot(MAxk[i-2])
         MAy = np.insert(MAy,i,a)
     
-    dataMA = np.vstack((MAxk.T,MAy)).T #MAxk_t = MAxk.T
+    dataMA = np.vstack((MAxk.T,MAy)).T
+
+    num = [1] 
+    den = MA.A1 #merubah menjadi rank 1
+    den = list(den) #list ==> menambah koma diantara elements
+    sys = signal.TransferFunction(num, den, dt=1) # selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
+                                                  # sehingga hasil tersebut merupakan angka hasil bagi den[0]
+                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25
+                                                  # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
+                                                  # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
     
     print(" MAxk1 = ")
     print(MAxk1)
@@ -196,6 +237,8 @@ def movingAverageOrde2():
     print(MAy)
     print("\n dataMA = ")
     print(dataMA)
+    print("\n Transfer Fungsi = ")
+    print(sys)
 
     plt.plot(MAxk, MAy)
     plt.plot(Vin2, Vout2)
@@ -237,6 +280,15 @@ def ARMAOrde1():
     
     dataARMA = np.vstack((ARMAxk.T,ARMAy)).T
 
+    num = [1] 
+    den = ARMA.A1 #merubah menjadi rank 1
+    den = list(den) #list ==> menambah koma diantara elements
+    sys = signal.TransferFunction(num, den, dt=1) #selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
+                                                  # sehingga hasil tersebut merupakan angka hasil bagi den[0]
+                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25 
+                                                  # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
+                                                  # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
+
     print(" ARMAxk1 = ")
     print(ARMAxk1)
     print("\n ARMAyk1 = ")
@@ -249,6 +301,8 @@ def ARMAOrde1():
     print(ARMAy)
     print("\n dataARMA = ")
     print(dataARMA)
+    print("\n Transfer Fungsi = ")
+    print(sys)
 
     plt.plot(ARMAxk, ARMAy)
     plt.plot(Vin1, Vout1)
@@ -309,6 +363,15 @@ def ARMAOrde2():
     
     dataARMA = np.vstack((ARMAxk.T,ARMAy)).T
 
+    num = [1] 
+    den = ARMA.A1 #merubah menjadi rank 1
+    den = list(den) #list ==> menambah koma diantara elements
+    sys = signal.TransferFunction(num, den, dt=1) #selalu menghasilkan tf dg s pangkat tertinggi berubah menjadi (s^n),
+                                                  # sehingga hasil tersebut merupakan angka hasil bagi den[0]
+                                                  # misal 1/4s^2+2s+1 menjadi 0.4/s^2+0.5s+0.25 
+                                                  # aku sudah mensimulasikannya hasilnya sama, secara matematis dan logika pun juga sama
+                                                  # jika menemukan solusinya silahkan PR ke https://github.com/ahmaddidiks/pis_py
+
     print(" ARMAxk1 = ")
     print(ARMAxk1)
     print("\n ARMAyk1 = ")
@@ -325,6 +388,8 @@ def ARMAOrde2():
     print(ARMAy)
     print("\n dataARMA = ")
     print(dataARMA)
+    print("\n Transfer Fungsi = ")
+    print(sys)
 
     plt.plot(ARMAxk, ARMAy)
     plt.plot(Vin2, Vout2)
