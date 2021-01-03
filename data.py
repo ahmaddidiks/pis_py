@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+#Author     : Ahmad Didik Setiyadi
+#Last Edit  : 3 Jan 2021
+#Alih bahasa dari MATLAB ke Python
+
 # Program Praktikum PIS (OFFLINE)
 # Merupakan program python untuk mengidentifikasikan parameter dari sebuah
 # transfer function diskrit yang dihitung secara offline. Disusun oleh

@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+#Author     : Ahmad Didik Setiyadi
+#Last Edit  : 3 Jan 2021
+#Alih bahasa dari MATLAB ke Python
+
 from data import *
 from scipy import signal
 
